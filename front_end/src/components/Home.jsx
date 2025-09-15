@@ -18,7 +18,7 @@ const Home = () => {
 
 
   useEffect(() => {
-   axios.get("http://localhost:4000/blog/")  //  correct backend URL
+   axios.get("/api/blog/")  //  correct backend URL
 
       .then((res) => {
         setPosts(res.data);
@@ -28,7 +28,7 @@ const Home = () => {
       });
   }, []);
   const deleteblog = (id) => {
-    axiosInstance.delete(`http://localhost:4000/blog/delete/${id}`)
+    axiosInstance.delete(`/blog/delete/${id}`)
       .then((res) => {
        window.location.reload();
 

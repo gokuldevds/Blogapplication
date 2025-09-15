@@ -24,7 +24,7 @@ const Add = () => {
     function submitForm(e) {
       e.preventDefault();
       if (location.state!=null){
-        axiosInstance.put(`/api/blog/edit/${location.state.post._id}`,form)
+        axiosInstance.put(`/blog/edit/${location.state.post._id}`,form)
         .then((res)=>{
             console.log('Blog updated:', res.data);
             alert('Blog updated successfully!')
@@ -37,7 +37,7 @@ const Add = () => {
         })
       }
       else{
-        axiosInstance.post('/api/blog/add', form)
+        axiosInstance.post('/blog/add', form)
             .then((res) => {
                 console.log('Blog added:', res.data);
                 alert('Blog added successfully!');
